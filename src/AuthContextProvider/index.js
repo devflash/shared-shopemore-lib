@@ -1,23 +1,29 @@
-import { createContext, useContext, useState } from 'react';
-import useAuth from '../hooks/useAuth';
+import { createContext, useContext, useReducer } from 'react';
 
-const authContext = {
-  updateAuth: () => {},
+const initialState = {
   authUser: null,
 };
+const authContext = createContext({
+  authUser: null,
+  updateAuth: () => {},
+});
 
-const useShopMoreAuth = () => {
-  const [authUser, setAuthUser] = useState(null);
+const useAuth = () => {
+  const [state, dispatch] = useReducer((state, newState) => {
+    return {
+      ...state,
+      ...newState,
+    };
+  }, initialState);
 
-  const updateAuth = (authData) => {
-    setAuthUser(authData);
-    console.log('from mf', authData);
-    console.log('updated', authUser);
+  const updateAuth = (authData) => dispatch({ authUser: authData });
+
+  return {
+    authUser: state.authUser,
+    updateAuth,
   };
-
-  return { authUser, updateAuth };
 };
 
-const AuthContextProvider = createContext(authContext);
-const useAuthContext = () => useContext(AuthContextProvider);
-export { useAuthContext, AuthContextProvider, useShopMoreAuth };
+const useAuthContext = () => useContext(authContext);
+
+export { authContext, useAuthContext, useAuth };
