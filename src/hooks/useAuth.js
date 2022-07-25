@@ -5,6 +5,8 @@ const useAuth = () => {
 
   const updateAuth = (authData) => {
     setAuthUser(authData);
+    console.log('from mf', authData);
+    console.log('updated', authUser);
   };
 
   return { authUser, updateAuth };

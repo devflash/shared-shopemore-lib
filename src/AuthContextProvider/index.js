@@ -8,7 +8,7 @@ const authContext = {
 
 const useShopMoreAuth = () => {
   const auth = useAuth();
-
+  console.log(auth);
   return { auth };
 };
 
