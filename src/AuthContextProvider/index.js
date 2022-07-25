@@ -7,9 +7,15 @@ const authContext = {
 };
 
 const useShopMoreAuth = () => {
-  const auth = useAuth();
-  console.log(auth);
-  return { auth };
+  const [authUser, setAuthUser] = useState(null);
+
+  const updateAuth = (authData) => {
+    setAuthUser(authData);
+    console.log('from mf', authData);
+    console.log('updated', authUser);
+  };
+
+  return { authUser, updateAuth };
 };
 
 const AuthContextProvider = createContext(authContext);

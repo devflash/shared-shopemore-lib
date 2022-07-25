@@ -4,7 +4,7 @@ const useAuth = () => {
   const [authUser, setAuthUser] = useState(null);
 
   const updateAuth = (authData) => {
-    setAuthUser(authData);
+    // setAuthUser(authData);
     console.log('from mf', authData);
     console.log('updated', authUser);
   };
