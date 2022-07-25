@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
 
-const useAuth = (authUser) => {
+const useAuth = () => {
   const [authUser, setAuthUser] = useState(null);
 
-  const updateAuth = (authUser) => {
-    setAuthUser(authUser);
+  const updateAuth = (authData) => {
+    setAuthUser(authData);
   };
 
   return { authUser, updateAuth };
