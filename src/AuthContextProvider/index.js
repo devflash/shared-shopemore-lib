@@ -1,8 +1,8 @@
-import { createContext, useContext } from 'react';
+import { createContext, useContext, useState } from 'react';
 import useAuth from '../hooks/useAuth';
 
 const authContext = {
-  updateAuth: async () => {},
+  updateAuth: () => {},
   authUser: null,
 };
 
