@@ -33,6 +33,6 @@ const useOrders = () => {
     updateAddress,
   };
 };
-export const useOrderContext = () => useContext(orderContext);
+const useOrderContext = () => useContext(orderContext);
 
 export { orderContext, useOrderContext, useOrders };
