@@ -1,6 +1,6 @@
 {
   "name": "@devflash/shared-shopmore-lib",
-  "version": "3.0.0",
+  "version": "3.0.1",
   "description": "A library to share context data between mf",
   "main": "./src/index.js",
   "scripts": {
